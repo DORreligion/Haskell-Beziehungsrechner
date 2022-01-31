@@ -2,13 +2,12 @@ import Data.Char
 import Data.List
 import System.IO
 import GHC.IO.Encoding (getLocaleEncoding)
+import System.Environment   
 
-{-ordNames :: [[Char]] -> [Char] for Arrays
-ordNames (x:xs)
-    | a < b = x ++ (head xs)
-    | otherwise = (head xs) ++ x
-    where a = map toLower x
-          b = map toLower (head xs)-}
+main = do  
+    args <- getArgs
+    putStrLn ("These two people match " ++ (show (dorrelation (args!!0) (args!!1))) ++ "%")
+
 
 ordNames :: [Char] -> [Char] -> [Char]
 ordNames x y
